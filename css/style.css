@@ -1,0 +1,438 @@
+/********** Template CSS **********/
+:root {
+    --primary: #1ebdfe;
+    --light: #FAFAFB;
+    --dark: #373643;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #373643;
+    border-color: #373643;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus-visible {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:focus-visible {
+    outline: none !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+    font-weight: bold;
+}
+
+.border-primary {
+    border-color: var(--primary) !important;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.fixed-top {
+    display: none;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 20px 15px;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        padding: 10px 0;
+    }
+}
+
+
+/*** Header ***/
+#home {
+    margin-bottom: 6rem;
+}
+
+.typed-cursor {
+    font-size: 30px;
+    color: var(--dark);
+}
+
+/*** About ***/
+#about .years .display-1 {
+    font-size: 10rem;
+    line-height: 9rem;
+}
+
+#about .years h5 {
+    letter-spacing: 30px;
+    margin-right: -30px;
+}
+
+
+/*** Skills ***/
+#skill .progress {
+    height: 5px;
+    border-radius: 4px;
+}
+
+#skill .progress .progress-bar {
+    width: 0px;
+    border-radius: 4px;
+    transition: 3s;
+}
+
+#skill .nav-pills .nav-link {
+    color: var(--dark);
+}
+
+#skill .nav-pills .nav-link.active {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+#skill .tab-content hr {
+    width: 30px;
+    border: 1px solid var(--light);
+    border-radius: 100px;
+}
+
+
+/*** Service ***/
+.service-item .bg-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/bg-icon.png) center center no-repeat;
+    background-size: cover;
+}
+
+.service-item p {
+    text-align: justify;
+}
+
+
+/*** Project Portfolio ***/
+#portfolio-flters li {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--dark);
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+
+#portfolio-flters li:hover,
+#portfolio-flters li.active {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.portfolio-img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.portfolio-img img.img-fluid {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.portfolio-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-bottom: 100px !important;
+    opacity: 0;
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+    padding-bottom: 30px !important;
+}
+
+/* Portfolio Button Styling */
+.portfolio-btn .btn {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.portfolio-btn .btn:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.portfolio-btn .btn i {
+    color: #fff;
+}
+
+
+/* Additional Custom Styles */
+#home {
+    padding-top: 0px !important;
+}
+
+.about-text {
+    text-align: justify;
+}
+
+.btn-circle {
+    border-radius: 50px;
+}
+
+.footer-brand-text {
+    font-size: 22px; 
+    font-weight: bold;
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item i,
+.skill-item img {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skill-item:hover i,
+.skill-item:hover img {
+    opacity: 0;
+}
+
+.skill-item .skill-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary);
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skill-item:hover .skill-name {
+    opacity: 1;
+}
+
+/* Skill/Tool Toggle Switch */
+.skill-tool-toggle {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.toggle-container {
+    display: inline-flex;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 0;
+    height: calc(100% - 10px);
+    background-color: var(--primary);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Responsive adjustments for toggle slider on mobile */
+@media (max-width: 768px) {
+    .toggle-slider {
+        width: 80px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-slider {
+        width: 70px !important;
+    }
+}
+
+.toggle-container--full-width {
+    display: flex;
+    width: 100%;
+}
+
+.toggle-btn {
+    padding: 10px 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #373643;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s;
+}
+
+.toggle-container--full-width .toggle-btn {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.toggle-btn.active {
+    color: #fff;
+}
+
+
+/*** Projects ***/
+#portfolio-flters {
+    display: inline-flex;
+}
+
+/* Floating animation for profile image */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#home .img-fluid[src*='profile.png'] {
+    animation: floatUpDown 4s ease-in-out infinite;
+}
